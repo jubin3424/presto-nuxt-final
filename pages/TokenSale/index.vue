@@ -32,9 +32,9 @@
                     <div style="padding: 14px;">
                       <span>JBCoin</span>
                       <div>
-                        <time class="time">2018. 07. 26</time>
-                        <el-button type="text" class="button">
-                          <nuxt-link to="/tokensale/jbcoin">Operating button</nuxt-link>
+                        <time class="time">2018. 07. 26</time><br>
+                        <el-button class="button">
+                          <nuxt-link to="/tokensale/jbcoin">Click</nuxt-link>
                         </el-button>
                       </div>
                     </div>
@@ -46,8 +46,8 @@
                     <div style="padding: 14px;">
                       <span>SkyCon</span>
                       <div>
-                        <time class="time">2018. 07. 26</time>
-                        <el-button type="text" class="button">Operating button</el-button>
+                        <time class="time">2018. 07. 26</time><br>
+                        <el-button class="button">Click</el-button>
                       </div>
                     </div>
                   </el-card>
@@ -58,8 +58,8 @@
                     <div style="padding: 14px;">
                       <span>Alphacon</span>
                       <div>
-                        <time class="time">2018. 07. 26</time>
-                        <el-button type="text" class="button">Operating button</el-button>
+                        <time class="time">2018. 07. 26</time><br>
+                        <el-button class="button">Operating button</el-button>
                       </div>
                     </div>
                   </el-card>
@@ -70,8 +70,8 @@
                     <div style="padding: 14px;">
                       <span>JBCoin</span>
                       <div>
-                        <time class="time">2018. 07. 26</time>
-                        <el-button type="text" class="button">Operating button</el-button>
+                        <time class="time">2018. 07. 26</time><br>
+                        <el-button class="button">Operating button</el-button>
                       </div>
                     </div>
                   </el-card>
@@ -82,8 +82,8 @@
                     <div style="padding: 14px;">
                       <span>SkyCon</span>
                       <div>
-                        <time class="time">2018. 07. 26</time>
-                        <el-button type="text" class="button">Operating button</el-button>
+                        <time class="time">2018. 07. 26</time><br>
+                        <el-button class="button">Operating button</el-button>
                       </div>
                     </div>
                   </el-card>
@@ -94,8 +94,8 @@
                     <div style="padding: 14px;">
                       <span>Alphacon</span>
                       <div>
-                        <time class="time">2018. 07. 26</time>
-                        <el-button type="text" class="button">Operating button</el-button>
+                        <time class="time">2018. 07. 26</time><br>
+                        <el-button class="button">Operating button</el-button>
                       </div>
                     </div>
                   </el-card>
@@ -106,8 +106,8 @@
                     <div style="padding: 14px;">
                       <span>JBCoin</span>
                       <div>
-                        <time class="time">2018. 07. 26</time>
-                        <el-button type="text" class="button">Operating button</el-button>
+                        <time class="time">2018. 07. 26</time><br>
+                        <el-button class="button">Operating button</el-button>
                       </div>
                     </div>
                   </el-card>
@@ -118,8 +118,8 @@
                     <div style="padding: 14px;">
                       <span>SkyCon</span>
                       <div>
-                        <time class="time">2018. 07. 26</time>
-                        <el-button type="text" class="button">Operating button</el-button>
+                        <time class="time">2018. 07. 26</time><br>
+                        <el-button class="button">Operating button</el-button>
                       </div>
                     </div>
                   </el-card>
@@ -130,8 +130,8 @@
                     <div style="padding: 14px;">
                       <span>Alphacon</span>
                       <div>
-                        <time class="time">2018. 07. 26</time>
-                        <el-button type="text" class="button">Operating button</el-button>
+                        <time class="time">2018. 07. 26</time><br>
+                        <el-button class="button">Operating button</el-button>
                       </div>
                     </div>
                   </el-card>
