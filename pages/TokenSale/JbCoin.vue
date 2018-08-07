@@ -84,12 +84,17 @@
           <el-col :xs="1" :sm="2">&nbsp;</el-col>
         </el-row>
       </div>
-      <div style="text-align: center;">
+      <div>
         <el-row>
           <el-col :xs="1" :sm="2">&nbsp;</el-col>
           <el-col :xs="22" :sm="20" class="information-tab">
+            <div style="text-align: center;">
             <img v-if="isShow" src="../../static/coin/jbcontent.png" style="width: 90%; margin: auto;">
-            <img v-if="isQuestion" src="../../static/coin/quest.png" style="width: 80%; margin: auto;">
+            <!--<img v-if="isQuestion" src="../../static/coin/quest.png" style="width: 80%; margin: auto;">-->
+            </div>
+            <div v-if="isQuestion">
+              <comment></comment>
+            </div>
           </el-col>
           <el-col :xs="1" :sm="2">&nbsp;</el-col>
         </el-row>
@@ -99,6 +104,7 @@
 </template>
 
 <script>
+  import Comment from '../../components/JbCoinComment'
   export default {
     name: 'JbCoin',
     data () {
@@ -119,6 +125,9 @@
         this.isQuestion = true
         this.selected = 'question'
       }
+    },
+    components: {
+      'comment': Comment
     }
   }
 </script>
