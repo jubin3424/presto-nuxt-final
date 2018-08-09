@@ -17,7 +17,6 @@
     asyncData({params}) {
       return axios.get(`https://itunes.apple.com/search?term=${params}&limit=3`)
         .then((response) => {
-          // store.commit('add', response.data.results)
           return {albumData: response.data.results}
         })
     }

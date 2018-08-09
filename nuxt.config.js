@@ -15,7 +15,8 @@ module.exports = {
         integrity: 'sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ', crossOrigin: 'anonymous'}
     ]
   },
-  plugins: [{src: '~/plugins/element-ui.js', ssr: true}],
+  plugins: [
+    {src: '~/plugins/element-ui.js', ssr: true}],
   /*
   ** Customize the progress bar color
   */
@@ -38,6 +39,20 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
+  ],
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api/': { target: 'http://localhost:3000/api', pathRewrite: {'^/api/': ''} }
+  },
+  serverMiddleware: [
+    // API middleware
+    '~/api/index.js'
+  ]
 }
 
