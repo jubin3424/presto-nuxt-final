@@ -5,7 +5,7 @@ let Comment = require('../../models/comment')
 let Answer = require('../../models/answer')
 
 router.get('/comments', (req, res) => {
-  Comment.find({}, 'user content created_at',
+  Comment.find({}, 'user content created_at answered',
     (error, comments) => {
       if (error) {
         console.error(error)
@@ -46,7 +46,7 @@ router.post('/comments/new', (req, res) => {
   let new_comment = new Comment({
     user: user,
     content: req.body.content,
-    created_at: currentDate
+    created_at: currentDate,
   })
 
   new_comment.save((error) => {
@@ -78,6 +78,35 @@ router.post('/comments/answer/:id', (req, res) => {
     res.send({
       success: true,
       message: '답변이 성공적으로 등록되었습니다'
+    })
+  })
+
+})
+
+router.put('/answered/:id', (req, res) => {
+  Comment.findById(req.params.id, 'answered', (error, comment) => {
+    if (error) { console.log(error)}
+    comment.answered = true
+    comment.save((error) => {
+      if (error) {console.log(error)}
+      res.send({
+        success: true,
+        message: 'Answer registered'
+      })
+    })
+  })
+})
+
+router.put('/unanswered/:id', (req, res) => {
+  Comment.findById(req.params.id, 'answered', (error, comment) => {
+    if (error) { console.log(error)}
+    comment.answered = false
+    comment.save((error) => {
+      if (error) {console.log(error)}
+      res.send({
+        success: true,
+        message: 'Answer deleted'
+      })
     })
   })
 })

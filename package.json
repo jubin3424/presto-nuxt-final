@@ -21,6 +21,7 @@
     "element-ui": "^2.4.5",
     "express": "^4.16.3",
     "mongoose": "^5.2.7",
+    "mongoose-dynamic-schemas": "^1.2.5",
     "nuxt": "^1.0.0",
     "qs": "^6.5.2",
     "vue-parallaxy": "^1.1.1"

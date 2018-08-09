@@ -19,16 +19,20 @@
         <div v-for="(comment, index) in comments" class="comment" :key="index">
           <div class="comment-part">
             <span class="comment_writer">{{ comment.user }}</span>
+            <span v-if="comment.answered" class="answered">Answered</span>
+            <span v-else class="unanswered">Unanswered</span>
             <span class="comment_date">
               {{ comment.created_at.split('T')[0] }}
               {{ comment.created_at.split('T')[1].slice(0,5) }}</span><br>
-            <span class="comment_contents">{{ comment.content }}{{ comment._id }}</span>
-            <span style="float: right; margin-left: 5px;" @click="deleteComment(comment._id)">
-              <i class="fas fa-trash-alt" style="cursor: pointer;"></i>
-            </span>
-            <span style="float: right" @click="showAnswerForm(index)">
-              <i class="fab fa-replyd"></i>
-            </span>
+            <div class="comment_contents">{{ comment.content }}</div>
+            <div v-if="isAuthenticated" style="text-align: right; margin-bottom: 5px;">
+              <span @click="deleteComment(comment._id)">
+                <i class="fas fa-trash-alt" style="cursor: pointer;"></i>
+              </span>
+              <span @click="showAnswerForm(index)" style="margin-left: 5px;">
+                <i class="fab fa-replyd"></i>
+              </span>
+            </div>
           </div>
           <div v-bind:class="[{ activeReply: num === index }, { nonActive: num !== index }]">
             <div class="answer-part">
@@ -45,8 +49,15 @@
           <div v-for="(answer, index) in answers" :key="index">
             <div v-if="answer.answerTo === comment._id">
               <div class="answerBox">
-              <i class="fab fa-replyd"></i>
-              {{ answer.content }}
+              ㄴ
+                <span class="answer_writer">{{ answer.user }}</span>
+                <span class="comment_date">
+                {{ answer.created_at.split('T')[0] }}
+                {{ answer.created_at.split('T')[1].slice(0,5) }}</span><br>
+                <div class="answer_contents">{{ answer.content }}</div>
+                <div style="text-align: right;" @click="deleteAnswer(comment._id)">
+              <i class="fas fa-trash-alt" style="cursor: pointer;"></i>
+            </div>
               </div>
             </div>
           </div>
@@ -64,8 +75,10 @@
         comments: '',
         answers: '',
         answerArea: '',
+        answered: false,
         num: '',
-        nonActive: 'nonActive'
+        nonActive: 'nonActive',
+        isAuthenticated: false
       }
     },
     created () {
@@ -97,7 +110,6 @@
         if (confirm('댓글을 삭제하시겠습니까?')) {
           await this.$axios.$delete('/api/comments/delete/' + id, {id: id})
             .then((response) => {
-              this.deleteAnswer(id)
               alert('삭제하였습니다.')
             })
             .catch((response) => {
@@ -117,16 +129,41 @@
             .catch((response) => {
               alert('오류가 발생했습니다')
             })
+          await this.checkAnswered(comment_id)
           await this.refreshAnswers()
           this.num = ''
         }
       },
-      async deleteAnswer(id) {
-       await this.$axios.$delete('/api/comments/answer/delete/' + id, {id: id})
-         .then((response) => {
-           console.log('댓글도 삭제됨')
-         })
+      async checkAnswered(comment_id) {
+        await this.$axios.$put('/api/answered/' + comment_id)
+          .then((response) => {
+            console.log(response.message)
+          })
+          .catch((response) => {
+            alert('오류가 발생했습니다')
+          })
+        await this.refreshComments()
       },
+      async uncheckAnswered(comment_id) {
+        await this.$axios.$put('/api/unanswered/' + comment_id)
+          .then((response) => {
+            console.log(response.message)
+          })
+          .catch((response) => {
+            alert('오류가 발생했습니다')
+          })
+        await this.refreshComments()
+      },
+      async deleteAnswer(id) {
+        if (confirm('답변을 삭제하시겠습니까?')) {
+          await this.$axios.$delete('/api/comments/answer/delete/' + id, {id: id})
+            .then((response) => {
+              console.log(response.message)
+            })
+          await this.uncheckAnswered(id)
+          await this.refreshAnswers()
+        }
+        },
       showAnswerForm(index) {
         this.num = index
       },
@@ -148,6 +185,28 @@
     margin-bottom: 0;
     color: #7f828b;
   }
+  .answered {
+    font-size: 0.8rem;
+    margin-left: 10px;
+    color: palevioletred;
+    /*background-color: palevioletred;*/
+    /*border-radius: 5px;*/
+    /*padding: 5px;*/
+  }
+  .unanswered {
+    font-size: 0.8rem;
+    margin-left: 10px;
+    color: cornflowerblue;
+  }
+  .answer_writer {
+    font-size: 1.1rem;
+    font-weight: bolder;
+    color: mediumpurple;
+    margin-left: 2px;
+  }
+  .answer_contents {
+    margin-top: 10px;
+  }
   .comment_writer {
     font-size: 1.2rem;
     font-weight: bolder;
@@ -158,12 +217,16 @@
     float: right;
   }
   .comment_contents {
-    line-height: 2rem;
+    margin-top: 0.3rem;
+    /*line-height: 2rem;*/
   }
   .comment {
     padding-top: 0.8rem;
-    margin-top: 1.3rem;
+    margin-top: 1.1rem;
     border-top: 1px solid #dbe1ec;
+  }
+  .answer-part {
+    margin-top: 1rem;
   }
   .answerBox {
     background-color: #f5f5f5;
