@@ -28,13 +28,16 @@
               <el-row :gutter="60" v-if="showList">
                 <el-col :xs="24" :sm="8" v-if="isAll || isOngoing">
                   <el-card :body-style="{ padding: '0px' }">
-                    <img src="../../static/img/image1.jpeg" class="image">
-                    <div style="padding: 14px;">
-                      <span>JBCoin</span>
+                    <img src="../../static/img/cosmo.png" class="image">
+                    <div style="padding: 5px 14px 14px 14px;">
+                      <div class="coinName">Cosmo Chain</div>
                       <div>
-                        <time class="time">2018. 07. 26</time><br>
+                        <time class="time">2018. 07. 26 ~ 07. 30</time><br>
+                        <span style="font-size: 0.9rem; color: gray">진행률</span>
+                        <el-progress :width="100" :percentage="70"
+                                     style="padding-top: 5px; padding-bottom: 5px;"></el-progress>
                         <el-button class="button">
-                          <nuxt-link to="/tokensale/jbcoin">Click</nuxt-link>
+                          <nuxt-link to="/tokensale/jbcoin">보러가기</nuxt-link>
                         </el-button>
                       </div>
                     </div>
@@ -42,96 +45,75 @@
                 </el-col>
                 <el-col :xs="24" :sm="8" v-if="isAll || isEnded">
                   <el-card :body-style="{ padding: '0px' }">
-                    <img src="../../static/img/image2.jpeg" class="image">
-                    <div style="padding: 14px;">
-                      <span>SkyCon</span>
+                    <img src="../../static/img/yggdrash.png" class="image">
+                    <div style="padding: 5px 14px 14px 14px;">
+                      <div class="coinName">Yggdrash</div>
                       <div>
-                        <time class="time">2018. 07. 26</time><br>
-                        <el-button class="button">Click</el-button>
+                        <time class="time">2018. 08. 05 ~ 08. 15</time><br>
+                        <span style="font-size: 0.9rem; color: gray">진행률</span>
+                        <el-progress :width="100" :percentage="70"
+                                     style="padding-top: 5px; padding-bottom: 5px;"></el-progress>
+                        <el-button class="button">보러가기</el-button>
                       </div>
                     </div>
                   </el-card>
                 </el-col>
                 <el-col :xs="24" :sm="8" v-if="isAll || isSuspended">
                   <el-card :body-style="{ padding: '0px' }">
-                    <img src="../../static/img/alphacon.png" class="image">
-                    <div style="padding: 14px;">
-                      <span>Alphacon</span>
+                    <img src="../../static/img/aelf.png" class="image">
+                    <div style="padding: 5px 14px 14px 14px;">
+                      <div class="coinName">Aelf</div>
                       <div>
-                        <time class="time">2018. 07. 26</time><br>
-                        <el-button class="button">Operating button</el-button>
+                        <time class="time">2018. 07. 19 ~ 07. 26</time><br>
+                        <span style="font-size: 0.9rem; color: gray">진행률</span>
+                        <el-progress :width="100" :percentage="70"
+                                     style="padding-top: 5px; padding-bottom: 5px;"></el-progress>
+                        <el-button class="button">보러가기</el-button>
                       </div>
                     </div>
                   </el-card>
                 </el-col>
                 <el-col :xs="24" :sm="8" v-if="isAll || isOngoing">
                   <el-card :body-style="{ padding: '0px' }">
-                    <img src="../../static/img/alphacon.png" class="image">
-                    <div style="padding: 14px;">
-                      <span>JBCoin</span>
+                    <img src="../../static/img/root.png" class="image">
+                    <div style="padding: 5px 14px 14px 14px;">
+                      <div class="coinName">RSK</div>
                       <div>
-                        <time class="time">2018. 07. 26</time><br>
-                        <el-button class="button">Operating button</el-button>
+                        <time class="time">2018. 07. 26 ~ 08. 25</time><br>
+                        <span style="font-size: 0.9rem; color: gray">진행률</span>
+                        <el-progress :width="100" :percentage="70"
+                                     style="padding-top: 5px; padding-bottom: 5px;"></el-progress>
+                        <el-button class="button">보러가기</el-button>
                       </div>
                     </div>
                   </el-card>
                 </el-col>
                 <el-col :xs="24" :sm="8" v-if="isAll || isEnded">
                   <el-card :body-style="{ padding: '0px' }">
-                    <img src="../../static/img/image1.jpeg" class="image">
-                    <div style="padding: 14px;">
-                      <span>SkyCon</span>
+                    <img src="../../static/img/glosfer.png" class="image">
+                    <div style="padding: 5px 14px 14px 14px;">
+                      <div class="coinName">Glosfer</div>
                       <div>
-                        <time class="time">2018. 07. 26</time><br>
-                        <el-button class="button">Operating button</el-button>
+                        <time class="time">2018. 07. 26 ~ 09. 16</time><br>
+                        <span style="font-size: 0.9rem; color: gray">진행률</span>
+                        <el-progress :width="100" :percentage="70"
+                                     style="padding-top: 5px; padding-bottom: 5px;"></el-progress>
+                        <el-button class="button">보러가기</el-button>
                       </div>
                     </div>
                   </el-card>
                 </el-col>
                 <el-col :xs="24" :sm="8" v-if="isAll || isSuspended">
                   <el-card :body-style="{ padding: '0px' }">
-                    <img src="../../static/img/image2.jpeg" class="image">
-                    <div style="padding: 14px;">
-                      <span>Alphacon</span>
+                    <img src="../../static/img/mvl.png" class="image">
+                    <div style="padding: 5px 14px 14px 14px;">
+                      <div class="coinName">MVLChain</div>
                       <div>
-                        <time class="time">2018. 07. 26</time><br>
-                        <el-button class="button">Operating button</el-button>
-                      </div>
-                    </div>
-                  </el-card>
-                </el-col>
-                <el-col :xs="24" :sm="8" v-if="isAll || isOngoing">
-                  <el-card :body-style="{ padding: '0px' }">
-                    <img src="../../static/img/alphacon.png" class="image">
-                    <div style="padding: 14px;">
-                      <span>JBCoin</span>
-                      <div>
-                        <time class="time">2018. 07. 26</time><br>
-                        <el-button class="button">Operating button</el-button>
-                      </div>
-                    </div>
-                  </el-card>
-                </el-col>
-                <el-col :xs="24" :sm="8" v-if="isAll || isEnded">
-                  <el-card :body-style="{ padding: '0px' }">
-                    <img src="../../static/img/image1.jpeg" class="image">
-                    <div style="padding: 14px;">
-                      <span>SkyCon</span>
-                      <div>
-                        <time class="time">2018. 07. 26</time><br>
-                        <el-button class="button">Operating button</el-button>
-                      </div>
-                    </div>
-                  </el-card>
-                </el-col>
-                <el-col :xs="24" :sm="8" v-if="isAll || isSuspended">
-                  <el-card :body-style="{ padding: '0px' }">
-                    <img src="../../static/img/image2.jpeg" class="image">
-                    <div style="padding: 14px;">
-                      <span>Alphacon</span>
-                      <div>
-                        <time class="time">2018. 07. 26</time><br>
-                        <el-button class="button">Operating button</el-button>
+                        <time class="time">2018. 09. 10 ~ 09. 15</time><br>
+                        <span style="font-size: 0.9rem; color: gray">진행률</span>
+                        <el-progress :width="100" :percentage="70"
+                                     style="padding-top: 5px; padding-bottom: 5px;"></el-progress>
+                        <el-button class="button">보러가기</el-button>
                       </div>
                     </div>
                   </el-card>
@@ -215,6 +197,15 @@
   a {
     text-decoration: none;
     color: #333333;
+  }
+  .coinName {
+    font-weight: bolder;
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+  }
+  .time {
+    color: #7f828b;
+    font-size: 0.8rem;
   }
   @media(max-width: 768px) {
     .card-container {

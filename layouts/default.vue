@@ -88,20 +88,20 @@
           </el-col>
         </div>
       </el-row>
-      <div class="partners">
-        <el-row>
-          <el-col :xs="1" :sm="6">
-            &nbsp;
-          </el-col>
-          <el-col :xs="22" :sm="12">
-            <img src="../static/img/prismlogo.png" width="200px">
-            <img src="../static/img/google.png" width="200px">
-          </el-col>
-          <el-col :xs="1" :sm="6">
-            &nbsp;
-          </el-col>
-        </el-row>
-      </div>
+      <!--<div class="partners">-->
+        <!--<el-row>-->
+          <!--<el-col :xs="1" :sm="6">-->
+            <!--&nbsp;-->
+          <!--</el-col>-->
+          <!--<el-col :xs="22" :sm="12">-->
+            <!--<img src="../static/img/prismlogo.png" width="200px">-->
+            <!--<img src="../static/img/google.png" width="200px">-->
+          <!--</el-col>-->
+          <!--<el-col :xs="1" :sm="6">-->
+            <!--&nbsp;-->
+          <!--</el-col>-->
+        <!--</el-row>-->
+      <!--</div>-->
     </div>
   </div>
 </template>

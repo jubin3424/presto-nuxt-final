@@ -6,7 +6,7 @@
         <el-col :xs="22" :sm="20">
           <div>
                 <span class="el-dropdown-link" style="font-size: 1rem;">
-                  JbCoin
+                  CosmoChain
                 </span>
           </div>
         </el-col>
@@ -22,7 +22,7 @@
                   <div style="position: relative;">
                     <img src="../../static/coin/jbcoin.png" class="coin-image">
                     <div class="coin-image-text" style="color: white">
-                      <h1 style="text-align: center;">Alphacon</h1>
+                      <h1 style="text-align: center;">CosmoChain</h1>
                       <el-button style="background-color: transparent; font-size: 1.5rem; padding: 1rem 1.5rem; color: white;">
                         <a href="https://alphacon.io/" style="color: white;">공홈 구매 바로가기</a></el-button>
                     </div>
@@ -31,17 +31,17 @@
                 <el-col :xs="24" :sm="12">
                   <div class="coin-info">
                     <div class="coin-info-detail">
-                      <b>Healthcare data platform</b> that acquires biometric data and provides quality personalized health solutions<br>
+                      Provide convenient solutions to both <b>customers</b> and <b>companies</b> by utilizing the power of the data within the Cosmochain platform.<br>
                       <div class="coin-info-detail-indetail">
                         <table>
                           <tr>
                             <td class="table-header">Date</td><td class="table-content">2018. 7. 27 ~ 7. 30</td>
                           </tr>
                           <tr>
-                            <td class="table-header">Price</td><td class="table-content">1 JBC = 0.5 PRST</td>
+                            <td class="table-header">Price</td><td class="table-content">1 COSM = 0.5 PRST</td>
                           </tr>
                           <tr>
-                            <td class="table-header">Bonus</td><td class="table-content">1% (1 JBC = 0.1 PRST)</td>
+                            <td class="table-header">Bonus</td><td class="table-content">1% (1 COSM = 0.1 PRST)</td>
                           </tr>
                           <tr>
                             <td class="table-header">Platform</td><td class="table-content">ERC20</td>
@@ -89,7 +89,7 @@
           <el-col :xs="1" :sm="2">&nbsp;</el-col>
           <el-col :xs="22" :sm="20" class="information-tab">
             <div style="text-align: center;">
-            <img v-if="isShow" src="../../static/coin/jbcontent.png" style="width: 90%; margin: auto;">
+            <img v-if="isShow" src="../../static/img/cosmo-explain.png" style="width: 90%; margin: auto;">
             <!--<img v-if="isQuestion" src="../../static/coin/quest.png" style="width: 80%; margin: auto;">-->
             </div>
             <div v-if="isQuestion">

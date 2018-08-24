@@ -14,11 +14,6 @@ db.once("open", (callback) => {
 
 mongoose.connect('mongodb://localhost:27017/comments', { useNewUrlParser: true})
 
-// db.collection.update(
-//   { answered: { $exists: false }},
-//   { $set: { defaulted: false}},
-// )
-
 // Require API routes
 const users = require('./routes/users')
 const comments = require('./routes/comment')

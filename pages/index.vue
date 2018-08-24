@@ -4,7 +4,7 @@
       <h1 class="main_title">Newly Arrived</h1>
       <el-carousel :interval="4000" type="card">
         <el-carousel-item v-for="(item, index) in tableData" :key="index">
-          <h3 style="text-align: center;"><img v-bind:src="item.src"></h3>
+          <h3 style="text-align: center;"><img v-bind:src="item.main"></h3>
 
         </el-carousel-item>
       </el-carousel>
@@ -45,20 +45,24 @@
         selected: 0,
         tableData: [{
           name: 'zantrex',
-          src: require('../static/img/image0.png'),
-          big: require('../static/img/image0-big.png')
+          main: require('../static/img/mvl2.png'),
+          src: require('../static/img/cosmo.png'),
+          big: require('../static/img/cosmo-big.png')
         }, {
           name: 'red',
-          src: require('../static/img/image1.png'),
-          big: require('../static/img/image1-big.png')
+          main: require('../static/img/yggdrash2.png'),
+          src: require('../static/img/yggdrash.png'),
+          big: require('../static/img/yggdrash-big.png')
         }, {
           name: 'blue',
-          src: require('../static/img/image2.png'),
-          big: require('../static/img/image2-big.png')
+          main: require('../static/img/root2.png'),
+          src: require('../static/img/root.png'),
+          big: require('../static/img/root-big.png')
         }, {
           name: 'green',
-          src: require('../static/img/image3.png'),
-          big: require('../static/img/image3.jpg')
+          main: require('../static/img/aelf2.png'),
+          src: require('../static/img/aelf.png'),
+          big: require('../static/img/aelf-big.png')
         }]
       }
     },
